@@ -4,7 +4,7 @@ import (
 	"database/sql"
 	"fmt"
 
-	"github.com/Karanth1r3/ws_chat_learn/config"
+	"github.com/Karanth1r3/ws_chat_learn/internal/config"
 )
 
 func ConnectDB(cfg config.DB) (*sql.DB, error) {
