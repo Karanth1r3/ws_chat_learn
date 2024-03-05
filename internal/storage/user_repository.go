@@ -3,6 +3,8 @@ package storage
 import (
 	"context"
 	"database/sql"
+
+	"github.com/Karanth1r3/ws_chat_learn/internal/models"
 )
 
 type DBTX interface {
@@ -16,8 +18,13 @@ type repository struct {
 	dbtx DBTX
 }
 
-func NewRepository(dbtx DBTX) *repository {
+func NewRepository(dbtx DBTX) models.Repository {
 	return &repository{dbtx: dbtx}
 }
 
-func 
+func (r *repository) CreateUser(ctx context.Context, user models.User) (*models.User, error) {
+
+	query := "INSERT INTO "
+
+	r.db.QueryRowContext(ctx, query)
+}
